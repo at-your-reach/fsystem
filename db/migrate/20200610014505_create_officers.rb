@@ -13,7 +13,7 @@ class CreateOfficers < ActiveRecord::Migration[6.0]
       t.integer :customer_amount
       t.integer :children_amount
       t.integer :age
-
+      t.string  :officer_picture
       t.timestamps
     end
   end
