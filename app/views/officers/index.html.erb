@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Officers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Birth date</th>
+      <th>Gender</th>
+      <th>Marital status</th>
+      <th>Nationality</th>
+      <th>Mobile number</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Education</th>
+      <th>Customer amount</th>
+      <th>Children amount</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @officers.each do |officer| %>
+      <tr>
+        <td><%= officer.name %></td>
+        <td><%= officer.birth_date %></td>
+        <td><%= officer.gender %></td>
+        <td><%= officer.marital_status %></td>
+        <td><%= officer.nationality %></td>
+        <td><%= officer.mobile_number %></td>
+        <td><%= officer.address %></td>
+        <td><%= officer.email %></td>
+        <td><%= officer.education %></td>
+        <td><%= officer.customer_amount %></td>
+        <td><%= officer.children_amount %></td>
+        <td><%= officer.age %></td>
+        <td><%= link_to 'Show', officer %></td>
+        <td><%= link_to 'Edit', edit_officer_path(officer) %></td>
+        <td><%= link_to 'Destroy', officer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Officer', new_officer_path %>

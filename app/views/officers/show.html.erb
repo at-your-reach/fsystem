@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @officer.name %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @officer.birth_date %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @officer.gender %>
+</p>
+
+<p>
+  <strong>Marital status:</strong>
+  <%= @officer.marital_status %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @officer.nationality %>
+</p>
+
+<p>
+  <strong>Mobile number:</strong>
+  <%= @officer.mobile_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @officer.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @officer.email %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @officer.education %>
+</p>
+
+<p>
+  <strong>Customer amount:</strong>
+  <%= @officer.customer_amount %>
+</p>
+
+<p>
+  <strong>Children amount:</strong>
+  <%= @officer.children_amount %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @officer.age %>
+</p>
+
+<%= link_to 'Edit', edit_officer_path(@officer) %> |
+<%= link_to 'Back', officers_path %>

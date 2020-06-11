@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Other name</th>
+      <th>String</th>
+      <th>Birth date</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Marital status</th>
+      <th>Nationality</th>
+      <th>Beneficiary</th>
+      <th>Mobile number</th>
+      <th>House number</th>
+      <th>Landmark location</th>
+      <th>Street name</th>
+      <th>Region</th>
+      <th>District</th>
+      <th>Town</th>
+      <th>Occupation</th>
+      <th>Id type</th>
+      <th>Id number</th>
+      <th>Spouse name</th>
+      <th>Number of children</th>
+      <th>Email</th>
+      <th>Date account opened</th>
+      <th>Accounts opened</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.other_name %></td>
+        <td><%= customer.string %></td>
+        <td><%= customer.birth_date %></td>
+        <td><%= customer.age %></td>
+        <td><%= customer.gender %></td>
+        <td><%= customer.marital_status %></td>
+        <td><%= customer.nationality %></td>
+        <td><%= customer.beneficiary %></td>
+        <td><%= customer.mobile_number %></td>
+        <td><%= customer.house_number %></td>
+        <td><%= customer.landmark_location %></td>
+        <td><%= customer.street_name %></td>
+        <td><%= customer.region %></td>
+        <td><%= customer.district %></td>
+        <td><%= customer.town %></td>
+        <td><%= customer.occupation %></td>
+        <td><%= customer.id_type %></td>
+        <td><%= customer.id_number %></td>
+        <td><%= customer.spouse_name %></td>
+        <td><%= customer.number_of_children %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.date_account_opened %></td>
+        <td><%= customer.accounts_opened %></td>
+        <td><%= customer.picture %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>
