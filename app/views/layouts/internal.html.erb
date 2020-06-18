@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <head>
+    <title>Micro-Finance and susu Application Systems</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+		<div class="<%= controller_name %> <%= action_name %>">
+			<%= render 'layouts/navbar'%>
+      
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      
+      <div class="container">
+        <%= yield %> 
+      </div>
+		</div>
+  </body>
+</html>

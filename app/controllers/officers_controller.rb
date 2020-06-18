@@ -1,5 +1,7 @@
 class OfficersController < ApplicationController
-  before_action :set_officer, only: [:show, :edit, :update, :destroy]
+	before_action :set_officer, only: [:show, :edit, :update, :destroy]
+	
+	layout "internal"
 
   # GET /officers
   # GET /officers.json
