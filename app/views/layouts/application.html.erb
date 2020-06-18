@@ -1,6 +1,6 @@
 <!DOCTYPE html>
   <head>
-    <title>Prototype</title>
+    <title>Micro-Finance and susu Application Systems</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,6 +9,8 @@
   </head>
 
   <body>
-    <%= yield %>
+		<div class="<%= controller_name %> <%= action_name %>">
+			<%= yield %>
+		</div>
   </body>
 </html>
