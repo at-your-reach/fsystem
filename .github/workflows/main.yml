@@ -41,7 +41,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gem-
     - name: Bundle Install
-      run: bundle install
+      run: bin/bundle install
     - name: Yarn Install
       run: bin/rails yarn:install
     - name: Compile Assets
