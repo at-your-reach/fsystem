@@ -11,5 +11,7 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
+# Assets
+RUN rails assets:precompile
 # Start the main process.
 CMD ["rails", "server", "-e", "production", "-b", "0.0.0.0"]
