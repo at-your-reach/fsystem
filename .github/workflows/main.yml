@@ -21,10 +21,10 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-		- name: Get Yarn Cache
+    - name: Get Yarn Cache
       id: yarn-cache
       run: echo "::set-output name=dir::$(yarn cache dir)"
-		- name: Cache Node Modules
+    - name: Cache Node Modules
       id: node-modules-cache
       uses: actions/cache@v1
       with:
@@ -32,7 +32,7 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-		- name: Cache Gems
+    - name: Cache Gems
       id: gem-cache
       uses: actions/cache@v1
       with:
@@ -40,14 +40,14 @@ jobs:
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gem-
-		- name: Bundle Install
+    - name: Bundle Install
       run: bundle install
-		- name: Yarn Install
+    - name: Yarn Install
       run: bin/rails yarn:install
-		- name: Compile Assets
+    - name: Compile Assets
       shell: bash
       run: rails assets:precompile
-		# Heroku login
+    # Heroku login
     - name: Login to Heroku Container registry
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
