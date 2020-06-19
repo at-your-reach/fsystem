@@ -21,25 +21,37 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Get Yarn Cache
-      id: yarn-cache
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    - name: Cache Node Modules
-      id: node-modules-cache
-      uses: actions/cache@v1
-      with:
-        path: ${{ steps.yarn-cache.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - name: Cache Gems
-      id: gem-cache
-      uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gem-
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+		- name: Ruby gem cache
+			uses: actions/cache@v1
+			with:
+				path: vendor/bundle
+				key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+				restore-keys: |
+					${{ runner.os }}-gems-
+		- name: Install gems
+			run: |
+				bundle config path vendor/bundle
+				bundle install --jobs 4 --retry 3
+
+		- name: Setup Node
+			uses: actions/setup-node@v1
+			with:
+				node-version: 10.13.0
+		- name: Find yarn cache location
+			id: yarn-cache
+			run: echo "::set-output name=dir::$(yarn cache dir)"
+		- name: JS package cache
+			uses: actions/cache@v1
+			with:
+				path: ${{ steps.yarn-cache.outputs.dir }}
+				key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+				restore-keys: |
+					${{ runner.os }}-yarn-
+		- name: Install packages
+			run: |
+				yarn install --pure-lockfile
     - name: Compile Assets
       shell: bash
       run: rails assets:precompile
