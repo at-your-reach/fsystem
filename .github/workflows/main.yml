@@ -40,8 +40,6 @@ jobs:
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gem-
-    - name: Bundle Install
-      run: bin/bundle install
     - name: Yarn Install
       run: bin/rails yarn:install
     - name: Compile Assets
