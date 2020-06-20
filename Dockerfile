@@ -10,7 +10,7 @@ WORKDIR /myapp
 COPY . /myapp
 
 RUN bundle install
-RUN bundle exec rails assets:precompile
+RUN rails assets:precompile
 RUN chmod +x /usr/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
