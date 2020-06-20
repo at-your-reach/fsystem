@@ -48,6 +48,8 @@ jobs:
       run: |
         yarn install --pure-lockfile
     - name: Compile Assets
+      env:
+        RAILS_ENV: production
       shell: bash
       run: |
         bundle install --jobs 4 --retry 3
