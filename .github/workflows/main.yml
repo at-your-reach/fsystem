@@ -49,9 +49,9 @@ jobs:
         yarn install --pure-lockfile
     - name: Compile Assets
       env:
-        RAILS_ENV: production
+        RAILS_ENV: "production"
+        BUNDLE_WITHOUT: "development:test"
       shell: bash
       run: |
-        bundle config set deployment 'true'
         bundle install --jobs 4 --retry 3
         bundle exec rails assets:precompile
