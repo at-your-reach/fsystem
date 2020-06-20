@@ -21,6 +21,15 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    - name: Compile Assets
+      env:
+        RAILS_ENV: "production"
+        BUNDLE_WITHOUT: "development:test"
+        RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      shell: bash
+      run: |
+        bundle install --jobs 4 --retry 3
+        bundle exec rails assets:precompile
     # Heroku login
     - name: Login to Heroku Container registry
       env: 
