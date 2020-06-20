@@ -49,4 +49,6 @@ jobs:
         yarn install --pure-lockfile
     - name: Compile Assets
       shell: bash
-      run: bin/rails assets:precompile
+      run: |
+        bundle install --jobs 4 --retry 3
+        bundle exec rails assets:precompile
