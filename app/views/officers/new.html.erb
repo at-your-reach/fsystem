@@ -1,5 +1,9 @@
 <h1>New Officer</h1>
 
-<%= render 'form', officer: @officer %>
+<div class="row">
+	<div class="col-md-12 order-md-1">
+		<%= render 'form', officer: @officer %>
+	</div>
+</div>
 
 <%= link_to 'Back', officers_path %>
