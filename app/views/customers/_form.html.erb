@@ -13,145 +13,145 @@
 
 	<div class="row">
 		<div class="mb-4">
-			<%= form.label :first_name %>
-    	<%= form.text_field :first_name %>
+    	<%= form.text_field :first_name, class: "form-control" %>
+			<%= form.label :first_name %> 
+		</div> 
+		
+		<div class="mb-4"> 		
+    	<%= form.text_field :last_name, class: "form-control" %>
+    	<%= form.label :last_name %>	
+		</div>
+		
+		<div class="mb-4">			
+    	<%= form.text_field :other_name, class: "form-control" %> 
+      <%= form.label :other_name %>
+		</div>
+	</div> <!-- In this case there are 3 that's why we use "mb-4" becasue 4 X 3 = 12 --> Do you understand this?
+
+  <div class="row">
+		<div class="mb-6">
+      <%= form.date_select :birth_date, class: "form-control" %>
+			<%= form.label :birth_date %>    	
 		</div>
 
-		<div class="mb-4">
-			<%= form.label :last_name %>
-    	<%= form.text_field :last_name %>	
+		<div class="mb-6">			
+    	<%= form.text_field :gender , class: "form-control" %>
+      <%= form.label :gender %>
+		</div>
+	</div>
+
+	<div class="row">	
+		<div class="mb-6">			
+    	<%= form.text_field :marital_status, class: "form-control" %>
+      <%= form.label :marital_status %>
 		</div>
 
-		<div class="mb-4">
-			<%= form.label :other_name %>
-    	<%= form.text_field :other_name %>
+		<div class="mb-6">			
+    	<%= form.text_field :nationality, class: "form-control" %>
+      <%= form.label :nationality %>	
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="mb-6">			
+    	<%= form.text_field :beneficiary, class: "form-control" %>
+      <%= form.label :beneficiary %>
+		</div>
+
+		<div class="mb-6">			
+    	<%= form.text_field :mobile_number, class: "form-control" %>
+      <%= form.label :mobile_number %>	
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="mb-6">			
+    	<%= form.text_field :house_number, class: "form-control" %>
+      <%= form.label :house_number %>
+		</div>
+
+		<div class="mb-6">			
+    	<%= form.text_field :landmark_location, class: "form-control" %>
+      <%= form.label :landmark_location %>	
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="mb-6">			
+    	<%= form.text_field :street_name, class: "form-control" %>
+      <%= form.label :street_name %>
+		</div>
+
+		<div class="mb-6">			
+   		<%= form.text_field :region, class: "form-control" %>
+       <%= form.label :region %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="mb-6">			
+    	<%= form.text_field :district, class: "form-control" %>
+      <%= form.label :district %>
+		</div>
+
+		<div class="mb-6">			
+    	<%= form.text_field :town, class: "form-control" %>
+      <%= form.label :town %>
 		</div>
 	</div>
 
   <div class="row">
-		<div class="mb-6">
-			<%= form.label :birth_date %>
-    	<%= form.date_select :birth_date %>
+		<div class="mb-6">			
+    	<%= form.text_field :occupation, class: "form-control" %>
+      <%= form.label :occupation %>
 		</div>
 
-		<div class="mb-6">
-			<%= form.label :gender %>
-    	<%= form.text_field :gender %>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="mb-6">
-			<%= form.label :marital_status %>
-    	<%= form.text_field :marital_status %>
-		</div>
-
-		<div class="mb-6">
-			<%= form.label :nationality %>
-    	<%= form.text_field :nationality %>	
+		<div class="mb-6">			
+    	<%= form.text_field :id_type, class: "form-control" %>
+      <%= form.label :id_type %>	
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="mb-6">
-			<%= form.label :beneficiary %>
-    	<%= form.text_field :beneficiary %>
+		<div class="mb-6">			
+    	<%= form.text_field :id_number, class: "form-control" %>
+      <%= form.label :id_number %>
 		</div>
 
-		<div class="mb-6">
-			<%= form.label :mobile_number %>
-    	<%= form.text_field :mobile_number %>	
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="mb-6">
-			<%= form.label :house_number %>
-    	<%= form.text_field :house_number %>
-		</div>
-
-		<div class="mb-6">
-			<%= form.label :landmark_location %>
-    	<%= form.text_field :landmark_location %>	
+		<div class="mb-6">			
+    	<%= form.text_field :spouse_name, class: "form-control" %>
+      <%= form.label :spouse_name %>	
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="mb-6">
-			<%= form.label :street_name %>
-    	<%= form.text_field :street_name %>
+		<div class="mb-6">			
+    	<%= form.number_field :number_of_children, class: "form-control" %>
+      <%= form.label :number_of_children %>
 		</div>
 
-		<div class="mb-6">
-			<%= form.label :region %>
-   		<%= form.text_field :region %>	
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="mb-6">
-			<%= form.label :district %>
-    	<%= form.text_field :district %>
-		</div>
-
-		<div class="mb-6">
-			<%= form.label :town %>
-    	<%= form.text_field :town %>	
-		</div>
-	</div>
-
-  <div class="row">
-		<div class="mb-6">
-			<%= form.label :occupation %>
-    	<%= form.text_field :occupation %>
-		</div>
-
-		<div class="mb-6">
-			<%= form.label :id_type %>
-    	<%= form.text_field :id_type %>	
+		<div class="mb-6">			
+    	<%= form.text_field :email, class: "form-control" %>
+      <%= form.label :email %>	
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="mb-6">
-			<%= form.label :id_number %>
-    	<%= form.text_field :id_number %>
+		<div class="mb-6">			
+    	<%= form.date_select :date_account_opened, class: "form-control" %>
+      <%= form.label :date_account_opened %>	
 		</div>
 
-		<div class="mb-6">
-			<%= form.label :spouse_name %>
-    	<%= form.text_field :spouse_name %>	
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="mb-6">
-			<%= form.label :number_of_children %>
-    	<%= form.number_field :number_of_children %>
-		</div>
-
-		<div class="mb-6">
-			<%= form.label :email %>
-    	<%= form.text_field :email %>	
+		<div class="mb-6">			
+    	<%= form.number_field :accounts_opened, class: "form-control" %>
+      <%= form.label :accounts_opened %>	
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="mb-6">
-			<%= form.label :date_account_opened %>
-    	<%= form.date_select :date_account_opened %>	
-		</div>
-
-		<div class="mb-6">
-			<%= form.label :accounts_opened %>
-    	<%= form.number_field :accounts_opened %>	
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="mb-6">
-			<%= form.label :picture %>
-    	<%= form.text_field :picture %>
+		<div class="mb-6">			
+    	<%= form.text_field :picture, class: "form-control" %>
+      <%= form.label :picture %> 
 		</div>
 
 		<div class="mb-6">
